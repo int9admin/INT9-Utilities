@@ -1,3 +1,7 @@
+/**
+Utility to connect to Celo Web3 Blockchain network and perform CRUD operations
+@author Balaji
+*/
 package com.sandbox.util;
 
 import java.math.BigDecimal;
