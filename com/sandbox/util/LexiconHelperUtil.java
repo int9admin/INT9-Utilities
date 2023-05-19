@@ -3,6 +3,13 @@ package com.sandbox.util;
 import java.util.Stack;
 import java.util.stream.Stream;
 
+/**
+ * Simple utilities to help compiler design.
+ * 
+ * @author Balaji
+ *
+ */
+
 public class LexiconHelperUtil {
 	
 	public static void main(String args[])
