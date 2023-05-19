@@ -2,7 +2,7 @@
 Utility to connect to Celo Web3 Blockchain network and perform CRUD operations
 @author Balaji
 */
-package com.sandbox.util;
+package com.sandbox.blockchain;
 
 import java.math.BigDecimal;
 
