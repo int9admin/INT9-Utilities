@@ -17,9 +17,10 @@ public class LexiconHelperUtil {
 	{
 		LexiconHelperUtil lUtil = new LexiconHelperUtil();
 		
-		String abc = "main{abc;jkl;for(i<10{print x}}";
+		String abc = "main{abc;jkl;for(i<10{print x}}abc";
 				
 		System.out.println(lUtil.preCompilerValidation(abc, '{', '}'));
+		System.out.println(lUtil.getCompilableBlock(abc));
 	}
 	
 	
@@ -43,4 +44,31 @@ public class LexiconHelperUtil {
     	return stck.isEmpty();
     }
 
+    public String getCompilableBlock(String inputStr)
+    {
+    	StringBuffer jsonStr = new StringBuffer();
+    	Stack<Character> stck = new Stack<>();
+    	char[] chars = inputStr.toCharArray();
+    	boolean start=false;
+    	for(int i=0;i<chars.length;i++)
+    	{
+ 
+    		if(chars[i] == '{' && stck.isEmpty())
+    		{
+    			stck.push(new Character(chars[i]));
+    			start=true;
+    		}
+    		if(start)  jsonStr.append(chars[i]);
+    		if(chars[i] == '}' &&stck.size()==1)
+    		{
+    			stck.pop();
+    			start=false;
+    		}
+    		
+
+    		
+    	}    	
+    	
+    	return jsonStr.toString();
+    }
 }
